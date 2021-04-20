@@ -138,7 +138,7 @@ public class PagarMeCreditCard: PagarMeCreditCardProcotol {
         let r = [
             String(format: "card_number=%@", self.number!),
             String(format: "card_holder_name=%@", self.holderName!),
-            String(format: "card_expiration_date=%@", self.expirationDate),
+            String(format: "card_expiration_date=%@", self.expirationDate.replacingOccurrences(of: "/", with: "")),
             String(format: "card_cvv=%@", self.cvv!)
         ]
         
